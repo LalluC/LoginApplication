@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun redirect() {
         val userData = viewModel.userData
+        Toast.makeText(this, "Details submitted successfully", Toast.LENGTH_SHORT).show()
 
         val intent = Intent(this, DashBoardActivity::class.java).apply {
             val bundle = Bundle().apply {
