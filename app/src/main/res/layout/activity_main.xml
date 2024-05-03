@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_logo"
+        android:textSize="25sp"
+        android:fontFamily="@font/accordalternateextrabold"
+        android:textColor="@color/red"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/logo_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_account"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/accordalternateextrabold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+              />
+
+    <TextView
+        android:id="@+id/pan_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/pan_number"
+        android:textStyle="bold"
+        android:textColor="@color/dark_grey"
+        android:textSize="14sp"
+        android:fontFamily="@font/accordalternateregular"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_text" />
+
+    <EditText
+        android:id="@+id/panNumberEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_bg"
+        app:layout_constraintTop_toBottomOf="@+id/pan_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="start|top"
+        android:hint="Enter PAN Number"
+        android:maxLength="15"
+        android:textSize="14sp"
+        android:inputType="textCapCharacters"
+        android:padding="12dp"
+        />
+
+    <TextView
+        android:id="@+id/birth_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/birthdate"
+        android:textStyle="bold"
+        android:textColor="@color/dark_grey"
+        android:textSize="14sp"
+        android:fontFamily="@font/accordalternateregular"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/panNumberEditText" />
+
+    <LinearLayout
+        android:id="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/birth_text"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/birthdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="2"
+            android:maxLength="2"
+            android:textSize="14sp"
+            android:layout_marginEnd="8dp"
+            android:inputType="number"
+            android:background="@drawable/edittext_birth_bg"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/birthMonth"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:ems="2"
+            android:maxLength="2"
+            android:layout_marginEnd="8dp"
+            android:textSize="14sp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:background="@drawable/edittext_birth_bg"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/birthYear"
+            android:layout_width="0dp"
+            android:textSize="14sp"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:maxLength="4"
+            android:layout_weight="2"
+            android:inputType="number"
+            android:background="@drawable/edittext_birth_bg"
+            android:padding="12dp" />
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/pan_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/declare_text"
+        android:textColor="@color/dark_grey"
+        app:layout_constraintBottom_toTopOf="@id/next"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp" />
+    <Button
+        android:id="@+id/next"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:background="@drawable/unselect_button_bg"
+        app:layout_constraintBottom_toTopOf="@id/no_pan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:id="@+id/no_pan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dnt_have_Pan"
+        android:textSize="14sp"
+        android:textColor="@color/unselected_button_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
